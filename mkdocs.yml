@@ -1,0 +1,17 @@
+site_name: Yaossg's Doc
+
+theme:
+    name: readthedocs
+
+nav:
+    - "Yaossg's Doc": 'index.md'
+    - 'Cripple C':
+        - 'Cripple C': 'cripplec/README.md'
+        - 符号: 'cripplec/token.md'
+        - 文本: 'cripplec/text.md'
+        - 预处理器: '404.html'
+        - 运算符（上）: 'cripplec/op-1.md'
+        - 运算符（下）: 'cripplec/op-2.md'
+        - 整数: 'cripplec/int.md'
+        - 隐式转换: 'cripplec/conv.md'
+        - cdecl: '404.html'
