@@ -1,6 +1,6 @@
 # 整数
 
-_integral range 是什么意思，是积分区间还是整型范围？_
+_程序员为什么没有办法分清万圣节和圣诞节？_
 
 ## 整数类型
 
@@ -8,11 +8,11 @@ _integral range 是什么意思，是积分区间还是整型范围？_
 
 | 有符号                                                       | 无符号                                        | 宽度（比特） |
 | ------------------------------------------------------------ | --------------------------------------------- | ------------ |
-| signed char                                                  | unsigned char                                 | 8            |
-| signed short int<br/>signed short<br/>short int<br/>short    | unsigned short int<br/>unsigned short         | 至少 16      |
-| signed int<br/>signed<br/>int                                | unsigned int<br/>unsigned                     | 至少 16      |
-| signed long int<br/>signed long<br/>long int<br/>long        | unsigned long int<br/>unsigned long           | 至少 32      |
-| signed long long int<br/>signed long long<br/>long long int<br/>long long | unsigned long long int<br/>unsigned long long | 至少 64      |
+| `signed char`                                                  | `unsigned char`                                 | 8            |
+| `signed short int`<br/>`signed short`<br/>`short int`<br/>`short`    | `unsigned short int`<br/>`unsigned short`         | 至少 16      |
+| `signed int`<br/>`signed`<br/>`int`                                | `unsigned int`<br/>`unsigned`                     | 至少 16      |
+| `signed long int`<br/>`signed long`<br/>`long int`<br/>`long`        | `unsigned long int`<br/>`unsigned long`           | 至少 32      |
+| `signed long long int`<br/>`signed long long`<br/>`long long int`<br/>`long long` | `unsigned long long int`<br/>`unsigned long long` | 至少 64      |
 
 同一个单元格中的类型是等价的。任何一个由多个关键字组成的类型，你都可以任意打乱关键字的顺序。
 
@@ -68,7 +68,7 @@ C++20 要求：有符号数右移时，最高位补符号位（即，算术右�
 
 根据前面除法的定义，我们已经可以知道，`%`是求余而不是求模（与之对应的，Python 的`%`就是求模）。
 
-注意，C 语言的`%`的操作数只能是整数，这是比较特殊的。如果想用浮点数，可以使用`<math.h>`提供的`fmod`（对，虽然是求余，但是名字是`fmod`，而`remainder`既不是求余也不是求模）。
+注意，C 语言的`%`的操作数只能是整数。如果想用浮点数，可以使用`<math.h>`提供的`fmod`（对，虽然是求余，但是名字是`fmod`，而`remainder`既不是求余也不是求模）。
 
 于是，我们已经合理定义了下面这些运算：
 
@@ -91,7 +91,7 @@ C99 引入了`<stdint.h>`和`<inttypes.h>`，来解决整数不定长的问题�
 `<stdint.h>`中定义的定长整型基本的格式是：
 
 ```
-[u]int[N (optional) |_leastN|_fastN|max|ptr (optional) ]_t
+[u]int[N|_leastN|_fastN|max|ptr]_t
 ```
 其中 N 替换为 8, 16, 32, 64 中的一个。
 
@@ -101,7 +101,7 @@ u 的前缀表示无符号数。由于是宏定义，所以下面这种写法大
 unsigned int64_t x; // why not uint64_t?
 ```
 
-可能令你有些意外的是，标准不保证编译器给出`intN_t`的定义。也就是说，从整型的最初的设计，到定长整型的定义，自始至终没有要求编译器真正意义上给出某个定长的整型。这种过分的灵活性是双刃剑。好在大部分的实现还是会给出定长的宏定义。
+可能令你有些意外的是，标准不保证实现给出`[u]intN_t`的定义。也就是说，从整型的最初的设计，到定长整型的定义，自始至终没有要求编译器真正意义上给出某个定长的整型。这种过分的灵活性是双刃剑。好在大部分的实现还是会给出定长的宏定义。标准同样不保证实现给出`[u]intptr_t`的定义。
 
 `[u]intmax_t`和`[u]intptr_t`很好理解，就是最长的整型，和指针对应的整型。`least`和`fast`是干嘛的？答案是，`least`是我们最熟悉的话术：至少 N 比特的整型（这也解释了为什么它可以保证被提供）；而`fast`则是略令人费解的：最快的 N 比特的整型。例如一种典型的做法是把`int_fast16_t`定义为`int`，因为实际上对`short`的计算都先提升到了`int`，计算完毕之后又转换回了`short`（参见[这里](conv.md#整型的提升)）。遗憾的是，这样做虽然是有一定道理的，但同样是不能保证的。正因为这里对“最快”的描述非常模糊，我很认同 gcc 对此的理解：_Not actually guaranteed to be fastest for all purposes_。
 
