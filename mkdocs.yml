@@ -6,6 +6,18 @@ use_directory_urls: false
 
 theme:
     name: readthedocs
+    
+plugins:
+    - search
+    - mermaid2
+    
+
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+    - mdx_math:
+        enable_dollar_delimiter: True
 
 nav:
     - "Yaossg's Doc": 'index.md'
@@ -20,3 +32,5 @@ nav:
         - 整数: 'cripplec/int.md'
         - 隐式转换: 'cripplec/conv.md'
         - cdecl: 'cripplec/cdecl.md'
+    - '字符集与编码':
+        - '概述': ce/overview.md
