@@ -1,6 +1,7 @@
 site_name: Yaossg's Doc
 site_url: https://yaossg.com/doc/
 repo_url: https://github.com/Yaossg/doc
+edit_uri: ''
 site_author: Yaossg
 use_directory_urls: false
 
