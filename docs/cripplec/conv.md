@@ -98,7 +98,13 @@ fp(); // 简略形式：OK
 
 最后一行可能令人略感疑惑，它实际上反复发生了如下的转换：
 
-![](implicit-cycle.png)
+```mermaid
+graph LR
+ptr["void (*)(void)"]
+fun["void(void)"]
+ptr-->|解引用|fun
+fun-->|退化|ptr
+```
 
 ## 布尔类型
 
