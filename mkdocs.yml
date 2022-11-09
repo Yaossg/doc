@@ -35,3 +35,5 @@ nav:
         - cdecl: 'cripplec/cdecl.md'
     - '字符集与编码':
         - '概述': ce/overview.md
+        - 'pre-Unicode':
+            - 'ASCII': ce/ascii/ascii.md
