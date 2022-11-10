@@ -37,3 +37,5 @@ nav:
         - '概述': ce/overview.md
         - 'pre-Unicode':
             - 'ASCII': ce/ascii/ascii.md
+            - 'GBK': ce/ascii/gbk.md
+        - '附录': ce/appendix.md
