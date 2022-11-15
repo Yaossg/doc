@@ -7,7 +7,7 @@ ASCII（American Standard Code for Information Interchange，美国信息交换�
 
 需要注意的是，字符的分类从实际的性质和区块（block）的划分上是有所不同的：
 
-- ASCII 的码位 0~31 是控制字符没错，但不要忘了 127 也是控制字符。32 空格是不是控制字符存在争议。
+- ASCII 的码位 0~31 是控制字符没错，但不要忘了 127 DEL 也是控制字符。32 空格是不是控制字符存在争议。
 
 - 码位 0-31 的字符被划分为 C0 Controls（C0 控制字符），码位 32-127 的字符被划分为 Basic Latin（基本拉丁字母）。
 
