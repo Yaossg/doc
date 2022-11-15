@@ -1,5 +1,7 @@
 # GBK
 
+> ⚠️ 你先别急 ⚠️ 🚧 本页面仍在施工中 🚧
+
 ASCII 或许在拓展之后还能够编码欧洲的语言，但是对于东亚的一些语言来说可能就力不从心了。我们需要更大的字符集，而更大的字符集就意味着在编码的时候势必不能仅仅使用一个字节了。本文以汉字为例，介绍最经典的汉字字符集和编码。
 
 ## GB 2313
@@ -52,10 +54,7 @@ EUC（Extended Unix Code，扩展 Unix 编码）提供了另一种编码方式�
 
 ## 参考资料
 
-https://en.wikipedia.org/wiki/GB_2312
-
-https://en.wikipedia.org/wiki/GBK
-
-https://en.wikipedia.org/wiki/ISO/IEC_2022
-
-https://en.wikipedia.org/wiki/EUC
+- https://en.wikipedia.org/wiki/GB_2312
+- https://en.wikipedia.org/wiki/GBK
+- https://en.wikipedia.org/wiki/ISO/IEC_2022
+- https://en.wikipedia.org/wiki/EUC
